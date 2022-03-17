@@ -5,9 +5,14 @@
     <h3 class="text-primary m-0">{{ product.name }}</h3>
     <p class="text-muted m-0">{{ product.description }}</p>
     <p class="text-muted">Price : {{ product.price }}</p>
-    <button class="btn btn-primary text-white" (click)="share()">
-      Share this products
-    </button>
+    <div class="d-flex gap-3 align-items-center">
+      <button class="btn btn-primary text-white" (click)="share()">
+        Share this products
+      </button>
+      <button class="btn btn-primary text-white" (click)="notifyMe()">
+        Notify Me
+      </button>
+    </div>
     <br /><br />
   </div>
 </div>
