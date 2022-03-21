@@ -1,17 +1,19 @@
 <!-- <p>product-list works!</p> -->
 <div class="container">
   <h2>Products List</h2>
-  <div *ngFor="let product of products">
-    <h3 class="text-primary m-0">{{ product.name }}</h3>
-    <p class="text-muted m-0">{{ product.description }}</p>
-    <p class="text-muted">Price : {{ product.price }}</p>
-    <div class="d-flex gap-3 align-items-center">
-      <button class="btn btn-primary text-white" (click)="share()">
-        Share this products
-      </button>
-      <button class="btn btn-primary text-white" (click)="notifyMe()">
-        Notify Me
-      </button>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let product of products">
+      <h3 class="text-primary m-0">{{ product.name }}</h3>
+      <p class="text-muted m-0">{{ product.description }}</p>
+      <p class="text-muted">Price : {{ product.price }}</p>
+      <div class="d-flex gap-3 align-items-center">
+        <button class="btn btn-primary text-white" (click)="share()">
+          Share this products
+        </button>
+        <button class="btn btn-primary text-white" (click)="notifyMe()">
+          Notify Me
+        </button>
+      </div>
     </div>
     <br /><br />
   </div>

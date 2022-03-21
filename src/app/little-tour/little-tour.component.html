@@ -1,0 +1,22 @@
+<div class="container">
+  <!-- <p>little-tour works!</p> -->
+  <br />
+  <div class="d-flex align-items-center" style="width: 30%">
+    <input
+      class="form-control"
+      #newHero
+      (keyup.enter)="addHero(newHero.value)"
+      (blur)="addHero(newHero.value); newHero.value = ''"
+    />
+    <button
+      class="btn btn-info w-100"
+      type="button"
+      (click)="addHero(newHero.value)"
+    >
+      Add me
+    </button>
+  </div>
+  <ul>
+    <li *ngFor="let hero of heroes">{{ hero }}</li>
+  </ul>
+</div>
