@@ -9,7 +9,11 @@ export class LittleTourComponent {
 heroes=['Pallavi', 'Jorav', 'Varun', 'Radha']
 addHero(newHero:string){
   if(newHero){
-          this.heroes.push(newHero);
+    this.heroes.push(newHero);
   }
 }
+deleteHero(addHero:string){
+       var index = this.heroes.indexOf(addHero);
+      this.heroes.splice(index, 1)
+      }
 }

@@ -5,18 +5,20 @@
     <input
       class="form-control"
       #newHero
-      (keyup.enter)="addHero(newHero.value)"
-      (blur)="addHero(newHero.value); newHero.value = ''"
+      (keyup.enter)="addHero(newHero.value); newHero.value = ''"
     />
     <button
       class="btn btn-info w-100"
       type="button"
-      (click)="addHero(newHero.value)"
+      (click)="addHero(newHero.value); newHero.value = ''"
     >
       Add me
     </button>
   </div>
   <ul>
-    <li *ngFor="let hero of heroes">{{ hero }}</li>
+    <li *ngFor="let hero of heroes">
+      {{ hero }}
+      <span (click)="deleteHero(hero)" style="cursor: pointer">x</span>
+    </li>
   </ul>
 </div>
