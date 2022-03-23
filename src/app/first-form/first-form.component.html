@@ -1,0 +1,108 @@
+<div class="container">
+  <div class="row">
+    <p>first-form works!</p>
+    <div class="col-md-6">
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <p>
+          <label for="firstname">First Name </label>
+          <input
+            class="form-control"
+            type="text"
+            id="firstname"
+            name="firstname"
+            formControlName="firstname"
+          />
+        </p>
+
+        <p>
+          <label for="lastname">Last Name </label>
+          <input
+            class="form-control"
+            type="text"
+            id="lastname"
+            name="lastname"
+            formControlName="lastname"
+          />
+        </p>
+
+        <p>
+          <label for="email">Email </label>
+          <input
+            class="form-control"
+            type="text"
+            id="email"
+            name="email"
+            formControlName="email"
+          />
+        </p>
+
+        <p>
+          <label for="gender">Geneder </label><br />
+          <input
+            type="radio"
+            value="male"
+            id="gender"
+            name="gender"
+            formControlName="gender"
+          />
+          Male
+          <input
+            type="radio"
+            value="female"
+            id="gender"
+            name="gender"
+            formControlName="gender"
+          />
+          Female
+        </p>
+
+        <p>
+          <input
+            type="checkbox"
+            id="isMarried"
+            name="isMarried"
+            formControlName="isMarried"
+          />
+          &nbsp;<label for="isMarried">Married </label>
+        </p>
+
+        <p>
+          <label for="country">Country </label>
+          <select
+            class="form-control"
+            id="country"
+            name="country"
+            formControlName="country"
+          >
+            <option selected>India</option>
+            <option>USA</option>
+            <option>UAE</option>
+          </select>
+        </p>
+        <p>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </p>
+      </form>
+    </div>
+    <div class="col-md-6" *ngIf="isShow">
+      <p>
+        First name is : <b>{{ contactForm.value.firstname }}</b>
+      </p>
+      <p>
+        Last name is : <b>{{ contactForm.value.lastname }}</b>
+      </p>
+      <p>
+        Email is : <b>{{ contactForm.value.email }}</b>
+      </p>
+      <p>
+        Geneder is : <b>{{ contactForm.value.gender }}</b>
+      </p>
+      <p>
+        Married Status is : <b>{{ contactForm.value.isMarried }}</b>
+      </p>
+      <p>
+        Country is : <b>{{ contactForm.value.country }}</b>
+      </p>
+    </div>
+  </div>
+</div>
